@@ -36,17 +36,18 @@
 | [Busan Restaurant](./projects/busan-restaurant/) | Python·OpenAPI | 부산 음식점 검색·조회 |
 | [Cafe Kiosk](./projects/cafe-kiosk/) | UI·State Logic | 메뉴 주문과 결제 흐름 |
 
-## Core Skills
+## Skills
 
 | 분야 | 기술 |
 |---|---|
-| Language | C, C++, Python, C#, SQL, HTML, CSS, JavaScript |
+| Language | C, C++, Python, C#, SQL |
 | IoT / Embedded | Raspberry Pi, Arduino, GPIO, Sensor Control |
-| Communication | MQTT, ROS2 Pub/Sub, Serial, TCP/IP, REST API |
+| Communication | MQTT, ROS2 Pub/Sub, Serial Communication, TCP/IP, REST API |
 | Vision / AI | OpenCV, YOLOv8 |
-| Application | PyQt5, WPF, ASP.NET Core Web API |
+| Application | Qt, PyQt5, WPF(.NET), ASP.NET Core Web API |
+| Web | HTML, CSS, JavaScript |
 | Database | MySQL, SQL Server, ERD, CRUD |
-| Environment | Linux Ubuntu, Git, GitHub, Visual Studio, VS Code |
+| Environment | Windows, Ubuntu Linux, Raspberry Pi OS, Git, GitHub, Visual Studio, VS Code, Docker, DBeaver, Postman |
 
 ## Portfolio Structure
 
