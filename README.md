@@ -49,25 +49,6 @@ IoT 시스템을 설계하고 구현한 프로젝트를 정리한 포트폴리�
 | Database | MySQL, SQL Server, ERD, CRUD |
 | Environment | Windows, Ubuntu Linux, Raspberry Pi OS, Git, GitHub, Visual Studio, VS Code, Docker, DBeaver, Postman |
 
-## Portfolio Structure
-
-```text
-portfolio/
-├── README.md
-├── assets/
-└── projects/
-    ├── smart-factory-packaging/
-    ├── ai-fire-detection/
-    ├── ros2-smart-gate/
-    ├── smarthome-iot/
-    ├── its-cctv/
-    ├── planmate/
-    ├── smart-iot-controller/
-    ├── busan-tourism/
-    ├── busan-restaurant/
-    └── cafe-kiosk/
-```
-
 각 프로젝트 폴더의 `README.md`에서 프로젝트 개요, 기능, 시스템 흐름,
 대표 트러블슈팅과 결과를 확인할 수 있습니다.
 
