@@ -1,6 +1,6 @@
 <div align="center">
 
-# 박소영 Portfolio
+# Portfolio
 
 **IoT · Embedded · System Integration**
 
