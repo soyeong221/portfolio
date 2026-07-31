@@ -25,7 +25,7 @@ IoT 시스템을 설계하고 구현한 프로젝트를 정리한 포트폴리�
 
 | 프로젝트 | 주요 기술 | 핵심 내용 |
 |---|---|---|
-| [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | AI·IoT·DB | 제품 분류, 생산량 관리, 작업자 포장 알림 |
+| **[In Progress]** [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | AI·IoT·DB | 제품 분류, 생산량 관리, 작업자 포장 알림 |
 | [AI Fire Detection](./projects/ai-fire-detection/) | Python·YOLO·MQTT | 실시간 화재 감지와 누적 경보 |
 | [ROS2 Smart Gate](./projects/ros2-smart-gate/) | ROS2·Arduino·Python | 센서 기반 위험 판단과 게이트 제어 |
 | [SmartHome IoT](./projects/smarthome-iot/) | Raspberry Pi·MQTT·PyQt | 실내 환경 모니터링과 원격 제어 |
