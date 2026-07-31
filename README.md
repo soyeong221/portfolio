@@ -4,7 +4,7 @@
 
 **IoT · Embedded · System Integration**
 
-센서와 하드웨어 제어부터 실시간 통신, 데이터 관리, 모니터링 화면까지
+센서와 하드웨어 제어부터 실시간 통신, 데이터 관리, 모니터링 화면까지<br>
 IoT 시스템을 설계하고 구현한 프로젝트를 정리한 포트폴리오입니다.
 
 `C` `C++` `Python` `C#` `SQL` `Raspberry Pi` `Arduino` `MQTT` `ROS2` `OpenCV`
