@@ -6,6 +6,7 @@
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ed683467-1581-406e-b848-3ecdbaa022f7" width="600" alt="ITS CCTV Monitoring System 실행 화면"/>
+  <img width="1237" height="692" alt="image" src="https://github.com/user-attachments/assets/7abce5ea-9555-40fe-9ab4-8c861c2b8feb" />
 </p>
 
 <br>
