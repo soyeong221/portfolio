@@ -5,7 +5,6 @@
 ## 실행 화면
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ed683467-1581-406e-b848-3ecdbaa022f7" width="600" alt="ITS CCTV Monitoring System 실행 화면"/>
   <img width="1237" height="692" alt="image" src="https://github.com/user-attachments/assets/7abce5ea-9555-40fe-9ab4-8c861c2b8feb" />
 </p>
 
@@ -48,7 +47,7 @@ ASP.NET Core Web API로 구현한 브릿지 서버를 통해 데이터를 전달
 ## 주요 기능
 
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/80429187-bc10-4f9d-beac-4c54fcae1f64" width="600" alt="ITS CCTV 기본 화면"/>
+  <img src="https://github.com/user-attachments/assets/80429187-bc10-4f9d-beac-4c54fcae1f64" width="1000" alt="ITS CCTV 기본 화면"/>
 </p>
 
 - 전국 시·도 단위의 위도·경도 범위를 이용한 CCTV 검색
@@ -59,7 +58,7 @@ ASP.NET Core Web API로 구현한 브릿지 서버를 통해 데이터를 전달
 <br>
 
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/ed683467-1581-406e-b848-3ecdbaa022f7" width="600" alt="ITS CCTV 정상 실행 화면"/>
+  <img src="https://github.com/user-attachments/assets/ed683467-1581-406e-b848-3ecdbaa022f7" width="1000" alt="ITS CCTV 정상 실행 화면"/>
 </p>
 
 - LibVLCSharp을 활용한 HLS 실시간 영상 재생
@@ -70,7 +69,7 @@ ASP.NET Core Web API로 구현한 브릿지 서버를 통해 데이터를 전달
 <br>
 
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/4bc9016a-a79a-49c4-bb1c-511f9954893f" width="600" alt="ITS CCTV 스트리밍 연결 불량 화면"/>
+  <img src="https://github.com/user-attachments/assets/4bc9016a-a79a-49c4-bb1c-511f9954893f" width="1000" alt="ITS CCTV 스트리밍 연결 불량 화면"/>
 </p>
 
 - 스트리밍 연결 성공·실패 상태 표시
