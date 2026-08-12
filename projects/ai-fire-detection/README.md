@@ -5,7 +5,7 @@
 ## 실행 화면
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0d03d636-cd6c-4a09-9757-b8a1138970fe" width="600" alt="AI Fire Detection Monitoring 실행 화면"/>
+  <img src="https://github.com/user-attachments/assets/0d03d636-cd6c-4a09-9757-b8a1138970fe" width="1000" alt="AI Fire Detection Monitoring 실행 화면"/>
 </p>
 
 <br>
