@@ -1,81 +1,88 @@
 # SmartHome IoT Monitoring System
 
-> MQTT와 Raspberry Pi를 활용한 실내 환경 모니터링 및 원격 제어
+> MQTT 기반 SmartHome 센싱 데이터 수집·저장 시스템
+
+## 실행 화면
+
+### MQTT Publish
+
+https://github.com/user-attachments/assets/4749c579-4239-4940-846b-4ceea4f8086b
+
+<br>
+
+### MQTT Subscribe
+
+https://github.com/user-attachments/assets/0844072f-f579-4127-a76e-351a69ffcc25
+
+<br>
+
+## 🔗 **Original Project**
+
+> WPF 기반 Dummy Simulator의 센싱 데이터 생성부터 MQTT Broker 구성,
+> Publish / Subscribe 및 MySQL 데이터 저장까지의 구현 과정을 확인할 수 있습니다.
+
+[View on GitHub](https://github.com/soyeong221/iot-dotnet-2026/blob/main/README3.md#13-smarthome-솔루션)
+
+---
 
 ## 프로젝트 개요
 
-실내 환경과 기기 상태를 실시간으로 모니터링하고,
-조명·온습도·출입 상태 등 다양한 홈 환경을 원격 제어하는 IoT 시스템입니다.
-Raspberry Pi에서 센서 데이터를 수집하고 MQTT로 전달하며,
-PyQt5 화면과 MySQL 데이터베이스를 통해 상태 확인과 이력 관리를 수행합니다.
+실제 IoT 장치 없이 SmartHome 환경의 데이터 흐름을 구현하기 위해
+WPF 기반 Dummy Simulator에서 가상의 센싱 데이터를 생성하고,
+MQTT를 통해 송수신하는 시스템을 구성했습니다.
+
+침실·욕실·거실·주방의 온·습도 데이터를 생성하여 JSON 형태로
+Eclipse Mosquitto Broker에 Publish하고,
+Subscriber에서 데이터를 Subscribe하여 MySQL에 저장하도록 구현했습니다.
+
+MQTT Broker의 Topic 및 접속 환경을 직접 구성하고,
+약 20시간 동안 시스템을 실행하여 약 29만 4천 건의
+센싱 데이터가 저장되는 것을 확인했습니다.
 
 ## 프로젝트 정보
 
 | 항목 | 내용 |
 |---|---|
-| 핵심 기술 | Python, Raspberry Pi, MQTT, PyQt5, MySQL |
-| 통신 | Eclipse Mosquitto |
-| 데이터 | 센서 수집, MQTT 메시지, DB 저장 |
-| UI | 실시간 상태 확인 및 원격 제어 |
+| 개발 형태 | 개인 실습 프로젝트 |
+| Language / UI | C#, WPF |
+| Messaging | MQTT, MQTTnet |
+| Broker | Eclipse Mosquitto |
+| Database | MySQL, MySQLConnector |
+| Data | SmartHome 온·습도 Dummy Data, JSON |
+| 핵심 기능 | 센싱 데이터 생성, MQTT Publish / Subscribe, DB 저장 |
 
 ## 주요 기능
 
-- 온습도·조도·출입 등 센서 데이터 수집
-- MQTT Publish / Subscribe 통신
-- PyQt5 기반 실시간 모니터링 UI
-- 조명과 장치 원격 제어
-- 화재·이상 상태 경보
-- MySQL 기반 센서 이력 저장
+- WPF 기반 SmartHome Dummy Simulator 구현
+- Bogus Package를 이용한 가상 센싱 데이터 생성
+- 침실·욕실·거실·주방 4개 공간의 온·습도 데이터 생성
+- 센싱 데이터를 JSON 형태로 변환
+- MQTTnet 기반 MQTT Publish / Subscribe 구현
+- Eclipse Mosquitto Broker 구축 및 연결
+- 세대별 MQTT Topic을 이용한 메시지 구분
+- MQTT Subscriber에서 센싱 데이터 수신
+- MySQL `sensor_data` 테이블에 수신 데이터 저장
+- MQTT Explorer를 이용한 Broker 연결 및 메시지 확인
+- 약 20시간 동안 약 29만 4천 건의 센싱 데이터 저장 확인
 
 ## 시스템 흐름
 
 ```text
-Sensors / Devices
-    ↓
-Raspberry Pi
-    ↓ MQTT Publish
-Mosquitto Broker
-    ├─ PyQt5 Monitoring UI
-    ├─ Remote Control Command
-    └─ MySQL Data Storage
-```
-
-## 대표 트러블슈팅
-
-### 1. Broker 접근 설정
-
-**문제**  
-기본 설정에서는 외부 장치 접속이 제한됨
-
-**해결**  
-listener와 인증 설정을 구성하고 서비스 재시작
-
-### 2. Topic 구조
-
-**문제**  
-기기별 메시지가 섞여 구독 범위가 불명확
-
-**해결**  
-공간·기기 기준 Topic 규칙을 정하고 `#` wildcard로 전체 모니터링
-
-### 3. UI 실시간 갱신
-
-**문제**  
-센서 수신 처리로 화면이 멈출 수 있음
-
-**해결**  
-주기적 갱신과 통신 처리를 분리해 UI 응답성 유지
-
-## 프로젝트 결과
-
-- 센서 데이터 수집부터 화면 표시까지 전체 흐름 구현
-- MQTT 기반 장치 간 비동기 통신 구조 이해
-- 실시간 모니터링과 DB 이력 관리 연계
-
-## 폴더 안내
-
-- `README.md`: 프로젝트 핵심 내용
-- `docs/`: 설계·요구사항 등 상세 문서
-- `images/`: 실행 화면이나 구성도 추가 위치
-
-> 이 포트폴리오 폴더는 프로젝트를 설명하기 위한 요약본입니다. 실제 소스코드는 각 원본 GitHub 저장소에서 관리합니다.
+SmartHome Dummy Simulator
+      (C# / WPF)
+           ↓
+   Bogus Dummy Data
+  온도 / 습도 데이터
+           ↓
+         JSON
+           ↓
+     MQTT Publish
+           ↓
+Eclipse Mosquitto Broker
+           ↓
+     MQTT Subscribe
+           ↓
+    Subscriber App
+           ↓
+        MySQL
+     (sensor_data)
