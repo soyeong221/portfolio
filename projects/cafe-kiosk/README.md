@@ -2,6 +2,21 @@
 
 > 메뉴 주문과 결제 흐름을 구현한 키오스크 프로젝트
 
+## 실행 화면
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/99563855-d6e9-4ec2-be43-4d88119a0355" width="600" alt="Cafe Kiosk 실행 화면"/>
+</p>
+
+### 실행 영상
+
+https://github.com/user-attachments/assets/d871907f-6564-4364-bd08-e2080f7dd60e
+
+🔗 **Original Project**  
+[View on GitHub](https://github.com/soyeong221/iot-dotnet-2026/blob/main/README2.md#11-카페-키오스크-개발)
+
+---
+
 ## 프로젝트 개요
 
 카페 메뉴를 선택하고 수량과 주문 금액을 확인한 뒤
