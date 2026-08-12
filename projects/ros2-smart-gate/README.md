@@ -2,11 +2,40 @@
 
 > ROS2와 Arduino를 연동한 센서 기반 실시간 게이트 제어 시스템
 
+## 실행 화면
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b3e87c35-14cd-48c5-840b-fd66d33ca493" width="600" alt="Smart Gate Monitoring System 실행 화면"/>
+</p>
+
+<br>
+
+## 시스템 구조
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9cce5030-4bbd-4cab-8995-ab3aed89795d" width="1000" alt="Smart Gate Monitoring System 시스템 구성 예시 및 동작 흐름"/>
+</p>
+
+<p align="center">
+  <sub>※ 시스템 구성을 이해하기 위한 예시 이미지입니다.</sub>
+</p>
+
+<br>
+
+## 🔗 **Original Project**
+
+[View on GitHub](https://github.com/soyeong221/iot-cpp-2026-mini-project/tree/main#smartgate)
+
+---
+
 ## 프로젝트 개요
 
 Arduino에서 측정한 거리·온도·습도·조도 데이터를 Serial 통신으로
 Raspberry Pi에 전달하고, ROS2에서 센서별 Topic으로 변환해 상태를 판단하는 시스템입니다.
-판단 결과는 LED와 게이트 제어 명령으로 다시 Arduino에 전달됩니다.
+
+`controller_node`에서 센서 데이터를 기반으로 위험 상태를 판단하고,
+결과를 `/led_cmd`, `/gate_cmd` Topic으로 발행하여
+Arduino의 RGB LED와 스테퍼 모터를 제어하도록 구성했습니다.
 
 ## 프로젝트 정보
 
@@ -16,15 +45,19 @@ Raspberry Pi에 전달하고, ROS2에서 센서별 Topic으로 변환해 상태�
 | 개발 환경 | Ubuntu, ROS2 Jazzy, Arduino UNO |
 | Language | Python, Arduino C++ |
 | Sensor / Actuator | HC-SR04, DHT11, CDS, RGB LED, Stepper Motor |
+| 통신 | Serial Communication, ROS2 Pub/Sub |
 
 ## 주요 기능
 
-- Arduino 센서 데이터 CSV 전송
-- ROS2 sensor_bridge 기반 센서 Topic 분리 발행
-- controller_node 기반 위험 상태 판단
-- RGB LED 상태 표시
-- 스테퍼 모터 기반 게이트 개폐
-- 콘솔 Dashboard 실시간 모니터링
+- Arduino에서 거리·온도·습도·조도 센서 데이터 수집
+- 센서 데이터를 `distance,temp,humidity,light` 형식의 CSV로 Serial 전송
+- `sensor_bridge`를 이용한 ROS2 센서 Topic 변환 및 발행
+- `/distance`, `/temperature`, `/humidity`, `/light_level` Topic 기반 상태 모니터링
+- `controller_node` 기반 복수 센서 위험 상태 판단
+- `/led_cmd`, `/gate_cmd` Topic 발행
+- RGB LED를 이용한 위험·주의·안전 상태 표시
+- 스테퍼 모터를 이용한 게이트 OPEN / CLOSE 제어
+- 콘솔 Dashboard를 통한 센서값·시스템 상태·제어 명령 실시간 확인
 
 ## 시스템 흐름
 
@@ -32,51 +65,19 @@ Raspberry Pi에 전달하고, ROS2에서 센서별 Topic으로 변환해 상태�
 Arduino Sensors
     ↓ Serial CSV
 sensor_bridge.py
-    ↓ /distance /temperature /humidity /light_level
+    ↓
+/distance
+/temperature
+/humidity
+/light_level
+    ↓
 controller_node.py
-    ↓ /led_cmd /gate_cmd
+    ↓
+/led_cmd
+/gate_cmd
+    ↓
 sensor_bridge.py
     ↓ Serial Command
-Arduino LED / Stepper Motor
-```
-
-## 대표 트러블슈팅
-
-### 1. Serial Parsing 오류
-
-**문제**  
-`ARDUINO READY` 같은 디버그 문자열이 CSV 데이터와 섞여 파싱 실패
-
-**해결**  
-Arduino 출력 형식을 네 개의 센서값 CSV로 고정
-
-### 2. RGB LED 색상 불일치
-
-**문제**  
-Active Low 방식과 실제 핀 매핑을 반대로 이해
-
-**해결**  
-`LOW=ON`, `HIGH=OFF` 기준으로 수정하고 YELLOW는 RED+GREEN으로 구현
-
-### 3. 명령 불일치
-
-**문제**  
-ROS2와 Arduino에서 서로 다른 명령 문자열 사용
-
-**해결**  
-`RED`, `YELLOW`, `GREEN`, `OPEN`, `CLOSE`, `OFF`로 규격 통일
-
-## 프로젝트 결과
-
-- ROS2와 Arduino 간 양방향 Serial 통신 구현
-- 센서값을 네 개의 Topic으로 분리
-- 복수 센서 기반 위험 상태 판단
-- 데이터 형식 표준화를 통한 통신 안정성 개선
-
-## 폴더 안내
-
-- `README.md`: 프로젝트 핵심 내용
-- `docs/`: 설계·요구사항 등 상세 문서
-- `images/`: 실행 화면이나 구성도 추가 위치
-
-> 이 포트폴리오 폴더는 프로젝트를 설명하기 위한 요약본입니다. 실제 소스코드는 각 원본 GitHub 저장소에서 관리합니다.
+Arduino
+    ├─ RGB LED
+    └─ Stepper Motor
