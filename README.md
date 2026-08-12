@@ -32,7 +32,6 @@ IoT 시스템을 설계하고 구현한 프로젝트를 정리한 포트폴리�
 | [ITS CCTV](./projects/its-cctv/) | C#·WPF·ASP.NET Core | 지도 기반 CCTV 영상 모니터링 |
 | [PlanMate](./projects/planmate/) | C++ | 달력형 일정·할일 관리 |
 | [Smart IoT Controller](./projects/smart-iot-controller/) | Python·PyQt5·GPIO | 센서 실시간 GUI와 장치 제어 |
-| [Busan Tourism](./projects/busan-tourism/) | Python·OpenAPI | 부산 관광 공공데이터 활용 |
 | [Busan Restaurant](./projects/busan-restaurant/) | Python·OpenAPI | 부산 음식점 검색·조회 |
 | [Cafe Kiosk](./projects/cafe-kiosk/) | UI·State Logic | 메뉴 주문과 결제 흐름 |
 
