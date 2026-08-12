@@ -39,7 +39,6 @@
 |---|---|
 | Language | C++ |
 | 핵심 개념 | OOP, STL vector, sort, File I/O, Exception Handling |
-| 기간 | 3주 |
 | 저장 방식 | tasks.txt 자동 저장·불러오기 |
 
 ## 주요 기능
