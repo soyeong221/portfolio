@@ -16,9 +16,12 @@ https://github.com/user-attachments/assets/2685a4fb-a967-4e5f-b010-a6270ba172b6
 
 <br>
 
-🔗 **Original Project**
+## 🔗 **Original Project**
 
-[View on GitHub](https://github.com/soyeong221/iot-dotnet-2026/blob/main/TOYPROJECT4.md#화재연기-감지-알람시스템)
+> FastAPI 기반 AI 비전검사부터 YOLO 객체인식, MQTT 실시간 스트리밍,
+> 화재·연기 감지 시스템까지의 전체 구현 과정을 확인할 수 있습니다.
+
+[View on GitHub](https://github.com/soyeong221/iot-dotnet-2026/blob/main/TOYPROJECT4.md#fastapi-기반-ai-비전검사-및-실시간-모니터링-시스템)
 
 ---
 
