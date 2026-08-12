@@ -19,9 +19,9 @@ https://github.com/user-attachments/assets/0844072f-f579-4127-a76e-351a69ffcc25
 ## 🔗 **Original Project**
 
 > WPF 기반 Dummy Simulator의 센싱 데이터 생성부터 MQTT Broker 구성,
-> Publish / Subscribe 및 MySQL 데이터 저장까지의 구현 과정을 확인할 수 있습니다.
+> Publish / Subscribe 및 MySQL 데이터 저장까지의 전체 구현 과정을 확인할 수 있습니다.
 
-[View on GitHub](https://github.com/soyeong221/iot-dotnet-2026/blob/main/README3.md#13-smarthome-솔루션)
+[View on GitHub](https://github.com/soyeong221/iot-dotnet-2026/blob/main/README2.md#13-smarthome-솔루션)
 
 ---
 
