@@ -8,11 +8,16 @@
   <img src="https://github.com/user-attachments/assets/99563855-d6e9-4ec2-be43-4d88119a0355" width="600" alt="Cafe Kiosk 실행 화면"/>
 </p>
 
+<br>
+
 ### 실행 영상
 
 https://github.com/user-attachments/assets/d871907f-6564-4364-bd08-e2080f7dd60e
 
-🔗 **Original Project**  
+<br>
+
+🔗 **Original Project**
+
 [View on GitHub](https://github.com/soyeong221/iot-dotnet-2026/blob/main/README2.md#11-카페-키오스크-개발)
 
 ---
