@@ -15,7 +15,7 @@
 ## GUI 실행 화면
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/2ae74064-fc8a-4650-aa95-9c2aafba6b3d" width="600" alt="Smart IoT Controller GUI 실행 화면"/>
+  <img src="https://github.com/user-attachments/assets/2ae74064-fc8a-4650-aa95-9c2aafba6b3d" width="400" alt="Smart IoT Controller GUI 실행 화면"/>
 </p>
 
 <br>
