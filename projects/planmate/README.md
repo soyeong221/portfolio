@@ -22,7 +22,7 @@
 
 🔗 **Original Project**
 
-[View on GitHub](https://github.com/soyeong221/iot-cpp-2026/tree/main/mini%20-%20project)
+[View on GitHub](https://github.com/soyeong221/iot-cpp-2026-mini-project/tree/main#track1)
 
 ---
 
