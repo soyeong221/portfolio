@@ -46,7 +46,7 @@ ASP.NET Core Web API로 구현한 브릿지 서버를 통해 데이터를 전달
 
 ## 주요 기능
 
-<p align="center">
+<p align="left">
   <img src="https://github.com/user-attachments/assets/80429187-bc10-4f9d-beac-4c54fcae1f64" width="600" alt="ITS CCTV 기본 화면"/>
 </p>
 
@@ -57,7 +57,7 @@ ASP.NET Core Web API로 구현한 브릿지 서버를 통해 데이터를 전달
 
 <br>
 
-<p align="center">
+<p align="left">
   <img src="https://github.com/user-attachments/assets/ed683467-1581-406e-b848-3ecdbaa022f7" width="600" alt="ITS CCTV 정상 실행 화면"/>
 </p>
 
@@ -68,7 +68,7 @@ ASP.NET Core Web API로 구현한 브릿지 서버를 통해 데이터를 전달
 
 <br>
 
-<p align="center">
+<p align="left">
   <img src="https://github.com/user-attachments/assets/4bc9016a-a79a-49c4-bb1c-511f9954893f" width="600" alt="ITS CCTV 스트리밍 연결 불량 화면"/>
 </p>
 
