@@ -23,17 +23,17 @@ IoT 시스템을 설계하고 구현한 프로젝트를 정리한 포트폴리�
 
 ## Projects
 
-| 프로젝트 | 주요 기술 | 핵심 내용 |
-|---|---|---|
-| **[In Progress]** [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | AI·IoT·DB | 제품 분류, 생산량 관리, 작업자 포장 알림 |
-| [AI Fire Detection](./projects/ai-fire-detection/) | Python·YOLO·MQTT | 실시간 화재 감지와 누적 경보 |
-| [ROS2 Smart Gate](./projects/ros2-smart-gate/) | ROS2·Arduino·Python | 센서 기반 위험 판단과 게이트 제어 |
-| [SmartHome IoT](./projects/smarthome-iot/) | Raspberry Pi·MQTT·PyQt | 실내 환경 모니터링과 원격 제어 |
-| [ITS CCTV](./projects/its-cctv/) | C#·WPF·ASP.NET Core | 지도 기반 CCTV 영상 모니터링 |
-| [PlanMate](./projects/planmate/) | C++ | 달력형 일정·할일 관리 |
-| [Smart IoT Controller](./projects/smart-iot-controller/) | Python·PyQt5·GPIO | 센서 실시간 GUI와 장치 제어 |
-| [Busan Restaurant](./projects/busan-restaurant/) | Python·OpenAPI | 부산 음식점 검색·조회 |
-| [Cafe Kiosk](./projects/cafe-kiosk/) | UI·State Logic | 메뉴 주문과 결제 흐름 |
+| 프로젝트                                                                                   | 주요 기술                         | 핵심 내용                                  |
+| -------------------------------------------------------------------------------------- | ----------------------------- | -------------------------------------- |
+| **[In Progress]** [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | Raspberry Pi·PyQt5·DB·AI      | 제품 분류, 생산량 관리, 작업자 포장 알림               |
+| [ROS2 Smart Gate](./projects/ros2-smart-gate/)                                         | ROS2·Arduino·Python           | 센서 데이터 기반 위험 판단과 게이트 제어                |
+| [SmartHome IoT](./projects/smarthome-iot/)                                             | C#·WPF·MQTT·MySQL             | Dummy 센싱 데이터 MQTT 송수신 및 DB 저장            |
+| [Smart IoT Controller](./projects/smart-iot-controller/)                               | Python·PyQt5·GPIO             | Raspberry Pi 센서 모니터링과 장치 제어              |
+| [AI Fire Detection](./projects/ai-fire-detection/)                                     | Python·YOLO·MQTT              | 실시간 화재·연기 감지 및 MQTT 모니터링               |
+| [ITS CCTV](./projects/its-cctv/)                                                       | C#·WPF·ASP.NET Core           | Open API 기반 실시간 CCTV·지도 통합 모니터링         |
+| [PlanMate](./projects/planmate/)                                                       | C++·OOP·File I/O              | 달력 기반 일정·할일 관리 프로그램                    |
+| [Busan Restaurant](./projects/busan-restaurant/)                                       | C#·WPF·OpenAPI                | 부산 공공데이터 기반 맛집 조회·추천                   |
+| [Cafe Kiosk](./projects/cafe-kiosk/)                                                   | UI·State Logic                | 메뉴 주문과 결제 흐름                            |
 
 ## Skills
 
