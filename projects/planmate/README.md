@@ -2,10 +2,35 @@
 
 > C++ 콘솔 기반 일정·할일 관리 프로그램
 
+## 실행 화면
+
+### 기본 화면
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/be99dadf-775b-48d1-a063-26bf381e2ac2" width="700" alt="PlanMate 기본 화면"/>
+</p>
+
+<br>
+
+### 일정 추가
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/367f1ecf-8d5e-4e9a-b7ac-73ef1b9a3aad" width="700" alt="PlanMate 일정 추가 화면"/>
+</p>
+
+<br>
+
+🔗 **Original Project**
+
+[View on GitHub](https://github.com/soyeong221/iot-cpp-2026/tree/main/mini%20-%20project)
+
+---
+
 ## 프로젝트 개요
 
 사용자 입력 기반 메뉴형 프로그램에서 시작해,
 날짜를 중심으로 일정과 할일을 함께 관리하는 달력형 콘솔 애플리케이션으로 발전시킨 프로젝트입니다.
+
 기능 추가에 그치지 않고 입력 안정성, 데이터 구조, 화면 흐름을 반복적으로 개선했습니다.
 
 ## 프로젝트 정보
@@ -40,45 +65,3 @@ Date Selection
 Schedule / Todo CRUD
     ↓
 Auto Save
-```
-
-## 대표 트러블슈팅
-
-### 1. 입력 버퍼 오류
-
-**문제**  
-`cin >>`과 `getline()` 혼용으로 Enter가 다음 입력으로 넘어감
-
-**해결**  
-문자열 입력을 `getline()`으로 통일하고 숫자는 `stoi()`로 변환
-
-### 2. 잘못된 숫자 입력
-
-**문제**  
-`stoi()` 변환 실패 시 프로그램 종료
-
-**해결**  
-`try-catch`와 범위 검증 추가
-
-### 3. 메뉴 중심 UX
-
-**문제**  
-기능은 동작하지만 사용자가 날짜 상황을 파악하기 어려움
-
-**해결**  
-달력을 상단에 유지하고 선택 날짜 상세를 보여주는 구조로 전환
-
-## 프로젝트 결과
-
-- Task 클래스 기반 일정 데이터 구조화
-- 파일 입출력을 통한 데이터 영속성 구현
-- 입력 예외 처리와 화면 전환 안정화
-- 기능 중심 프로그램을 달력 중심 UX로 개선
-
-## 폴더 안내
-
-- `README.md`: 프로젝트 핵심 내용
-- `docs/`: 설계·요구사항 등 상세 문서
-- `images/`: 실행 화면이나 구성도 추가 위치
-
-> 이 포트폴리오 폴더는 프로젝트를 설명하기 위한 요약본입니다. 실제 소스코드는 각 원본 GitHub 저장소에서 관리합니다.
