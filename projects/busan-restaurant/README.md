@@ -5,7 +5,7 @@
 ## 실행 화면
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5b390f32-14bd-4c89-a993-2cb7d9aaa760" width="600" alt="Busan Restaurant Data Service 실행 화면"/>
+  <img src="https://github.com/user-attachments/assets/5b390f32-14bd-4c89-a993-2cb7d9aaa760" width="1000" alt="Busan Restaurant Data Service 실행 화면"/>
 </p>
 
 <br>
@@ -47,11 +47,11 @@ https://github.com/user-attachments/assets/ae3f8def-134a-423c-941e-343ef4586461
 ## 주요 기능
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7633b677-264b-4f2e-9b1f-9510607a7adc" width="600" alt="맛집 목록 조회 화면"/>
+  <img src="https://github.com/user-attachments/assets/7633b677-264b-4f2e-9b1f-9510607a7adc" width="1000" alt="맛집 목록 조회 화면"/>
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/d33c55b5-91e6-45f9-8903-05dcda33bc9a" width="600" alt="맛집 상세정보 화면"/>
+  <img src="https://github.com/user-attachments/assets/d33c55b5-91e6-45f9-8903-05dcda33bc9a" width="1000" alt="맛집 상세정보 화면"/>
 </p>
 
 - 페이지 번호와 결과 수를 이용한 맛집 데이터 조회
@@ -65,7 +65,7 @@ https://github.com/user-attachments/assets/ae3f8def-134a-423c-941e-343ef4586461
 <br>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5ee2fdc5-08c3-4440-b02b-c244dd1f5e13" width="600" alt="NLog 로그 기록 화면"/>
+  <img src="https://github.com/user-attachments/assets/5ee2fdc5-08c3-4440-b02b-c244dd1f5e13" width="1000" alt="NLog 로그 기록 화면"/>
 </p>
 
 - NLog를 이용한 앱 실행 및 API 조회 로그 기록
@@ -73,7 +73,7 @@ https://github.com/user-attachments/assets/ae3f8def-134a-423c-941e-343ef4586461
 <br>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/cedd7392-35f8-4db3-a9ba-0bedd63366d1" width="600" alt="오늘 뭐 먹지 랜덤 추천 화면"/>
+  <img src="https://github.com/user-attachments/assets/cedd7392-35f8-4db3-a9ba-0bedd63366d1" width="1000" alt="오늘 뭐 먹지 랜덤 추천 화면"/>
 </p>
 
 - 현재 조회된 맛집 중 하나를 무작위로 선택하는 `오늘 뭐 먹지?` 기능
