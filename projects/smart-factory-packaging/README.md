@@ -7,7 +7,7 @@
 ## 시스템 아키텍처
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f8692914-2d8f-4b67-af39-0f04a263ae9e" width="1000" alt="Smart Factory Packaging Alert System 시스템 아키텍처"/>
+  <img src="https://github.com/user-attachments/assets/d695a594-d3a1-4d8d-973d-6c3d63892e49" width="1000" alt="Smart Factory Packaging Alert System ERD"/>
 </p>
 
 <br>
@@ -15,7 +15,7 @@
 ## ERD
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/d695a594-d3a1-4d8d-973d-6c3d63892e49" width="1000" alt="Smart Factory Packaging Alert System ERD"/>
+  <img src="https://github.com/user-attachments/assets/f8692914-2d8f-4b67-af39-0f04a263ae9e" width="1000" alt="Smart Factory Packaging Alert System 시스템 아키텍처"/>
 </p>
 
 <br>
