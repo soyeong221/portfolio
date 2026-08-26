@@ -12,7 +12,7 @@
 
 ## 실행 영상
 
-실행_영상_URL_추가
+https://github.com/user-attachments/assets/a65df13d-a57e-4fb7-86b9-78a34f76bb0d
 
 <br>
 
