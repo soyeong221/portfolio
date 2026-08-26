@@ -15,42 +15,47 @@ IoT 시스템을 설계하고 구현한 프로젝트를 정리한 포트폴리�
 
 ## About Me
 
-전기·반도체 전공을 기반으로 IoT 시스템 개발 과정을 수료하며  
+전기·반도체 전공을 기반으로 IoT 시스템 개발 과정을 수료하며
 센서 데이터 수집, 장치 제어, 네트워크 통신, 데이터베이스, 모니터링 시스템을 학습했습니다.
 
-기능 구현뿐 아니라 요구사항, 시스템 흐름, DB 구조, 오류 원인과 해결 과정을 문서화하며  
+기능 구현뿐 아니라 요구사항, 시스템 흐름, DB 구조, 오류 원인과 해결 과정을 문서화하며
 프로젝트를 구조적으로 이해하고 정리하는 역량을 쌓았습니다.
 
 ## Projects
 
-| 프로젝트                                                                                   | 주요 기술                         | 핵심 내용                                  |
-| -------------------------------------------------------------------------------------- | ----------------------------- | -------------------------------------- |
-| **[In Progress]** [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | Raspberry Pi·PyQt5·DB·AI      | 제품 분류, 생산량 관리, 작업자 포장 알림               |
-| [ROS2 Smart Gate](./projects/ros2-smart-gate/)                                         | ROS2·Arduino·Python           | 센서 데이터 기반 위험 판단과 게이트 제어                |
-| [SmartHome IoT](./projects/smarthome-iot/)                                             | C#·WPF·MQTT·MySQL             | Dummy 센싱 데이터 MQTT 송수신 및 DB 저장            |
-| [Smart IoT Controller](./projects/smart-iot-controller/)                               | Python·PyQt5·GPIO             | Raspberry Pi 센서 모니터링과 장치 제어              |
-| [AI Fire Detection](./projects/ai-fire-detection/)                                     | Python·YOLO·MQTT              | 실시간 화재·연기 감지 및 MQTT 모니터링               |
-| [ITS CCTV](./projects/its-cctv/)                                                       | C#·WPF·ASP.NET Core           | Open API 기반 실시간 CCTV·지도 통합 모니터링         |
-| [PlanMate](./projects/planmate/)                                                       | C++·OOP·File I/O              | 달력 기반 일정·할일 관리 프로그램                    |
-| [Busan Restaurant](./projects/busan-restaurant/)                                       | C#·WPF·OpenAPI                | 부산 공공데이터 기반 맛집 조회·추천                   |
-| [Cafe Kiosk](./projects/cafe-kiosk/)                                                   | UI·State Logic                | 메뉴 주문과 결제 흐름                            |
+| 프로젝트                                                                                   | 주요 기술                                 | 핵심 내용                           |
+| -------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------- |
+| **[In Progress]** [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | Raspberry Pi·PyQt5·DB·AI              | 제품 분류, 생산량 관리, 작업자 포장 알림        |
+| [AI Conveyor Process Control](./projects/ai-conveyor-control/)                         | Python·YOLO·Raspberry Pi·Arduino·MQTT | AI 객체 인식 기반 제품 분류 및 컨베이어 제어     |
+| [AI Knowledge Search System](./projects/ai-knowledge-system/)                          | C#·WPF·FastAPI·RAG·ChromaDB           | PDF 벡터 검색 및 문서 기반 AI 질의응답       |
+| [ROS2 Smart Gate](./projects/ros2-smart-gate/)                                         | ROS2·Arduino·Python                   | 센서 데이터 기반 위험 판단과 게이트 제어         |
+| [SmartHome IoT](./projects/smarthome-iot/)                                             | C#·WPF·MQTT·MySQL                     | Dummy 센싱 데이터 MQTT 송수신 및 DB 저장   |
+| [ITS CCTV](./projects/its-cctv/)                                                       | C#·WPF·ASP.NET Core                   | Open API 기반 실시간 CCTV·지도 통합 모니터링 |
+| [AI Fire Detection](./projects/ai-fire-detection/)                                     | Python·YOLO·MQTT                      | 실시간 화재·연기 감지 및 MQTT 모니터링        |
+
+### Other Projects
+
+* [Smart IoT Controller](./projects/smart-iot-controller/) — Raspberry Pi 센서 모니터링 및 장치 제어
+* [PlanMate](./projects/planmate/) — C++ 객체지향 기반 일정·할 일 관리 프로그램
+* [Busan Restaurant](./projects/busan-restaurant/) — 부산 공공데이터 기반 맛집 조회·추천
+* [Cafe Kiosk](./projects/cafe-kiosk/) — 메뉴 주문 및 결제 흐름 구현
 
 ## Skills
 
-| 분야 | 기술 |
-|---|---|
-| Language | C, C++, Python, C#, SQL |
-| IoT / Embedded | Raspberry Pi, Arduino, GPIO, Sensor Control |
-| Communication | MQTT, ROS2 Pub/Sub, Serial Communication, TCP/IP, REST API |
-| Vision / AI | OpenCV, YOLOv8 |
-| Application | Qt, PyQt5, WPF(.NET), ASP.NET Core Web API |
-| Web | HTML, CSS, JavaScript |
-| Database | MySQL, SQL Server, ERD, CRUD |
-| Environment | Windows, Ubuntu Linux, Raspberry Pi OS, Git, GitHub, Visual Studio, VS Code, Docker, DBeaver, Postman |
+| 분야             | 기술                                                                                                                |
+| -------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Language       | C, C++, Python, C#, SQL                                                                                           |
+| IoT / Embedded | Raspberry Pi, Arduino, ESP32-CAM, GPIO, Sensor Control                                                            |
+| Communication  | MQTT, ROS2 Pub/Sub, Serial Communication, TCP/IP, REST API                                                        |
+| Vision / AI    | OpenCV, YOLO, RAG, Sentence Transformers, Ollama, OpenAI                                                          |
+| Application    | Qt, PyQt5, WPF(.NET), DevExpress, ASP.NET Core Web API, FastAPI                                                   |
+| Web            | HTML, CSS, JavaScript                                                                                             |
+| Database       | MySQL, ChromaDB, ERD, CRUD                                                                                        |
+| Environment    | Windows, Ubuntu Linux, Raspberry Pi OS, Git, GitHub, Visual Studio, VS Code, PlatformIO, Docker, DBeaver, Postman |
 
 각 프로젝트 폴더의 `README.md`에서 프로젝트 개요, 기능, 시스템 흐름,
 대표 트러블슈팅과 결과를 확인할 수 있습니다.
 
 ## Contact
 
-- GitHub: [soyeong221](https://github.com/soyeong221)
+* GitHub: [soyeong221](https://github.com/soyeong221)
