@@ -17,7 +17,7 @@
 ## 모니터링 화면
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a7b059dd-8dc3-40e4-af73-7feeddea95e5" width="600" alt="Smart Gate Monitoring System PyQt5 모니터링 화면"/>
+  <img src="https://github.com/user-attachments/assets/1fb96466-2941-4504-a33a-5aaff134eacf" width="600" alt="Smart Gate Monitoring System PyQt5 모니터링 화면"/>
 </p>
 
 <p align="center">
@@ -110,6 +110,8 @@ Arduino
 | 거리 < 30cm | `NEAR APPROACH` | YELLOW | CLOSE |
 | 거리 < 10cm | `INTRUSION DETECTED` | RED | OPEN |
 | 온도 > 35°C | `FIRE EMERGENCY` | RED | OPEN |
+
+> 여러 조건이 동시에 충족되는 경우 코드의 판단 순서에 따라 후순위 조건이 최종 상태와 제어 명령에 반영됩니다.
 
 ### LED 상태
 
@@ -263,7 +265,7 @@ Serial 제어 명령의 일관성을 확보했습니다.
 - 센서 데이터와 제어 명령의 형식을 표준화하여 통신 안정성 개선
 - 기존 콘솔 Dashboard를 PyQt5 기반 모니터링 GUI로 확장
 - 센서값·시스템 상태·LED 및 게이트 제어 명령 실시간 시각화
-- Arduino 센서 수집 → ROS2 상태 판단 → 하드웨어 제어 → GUI 모니터링까지 이어지는 시스템 흐름 구현
+- Arduino 센서 수집 → ROS2 상태 판단 → 하드웨어 제어로 이어지는 시스템 흐름과 PyQt5 기반 실시간 모니터링 구현
 
 ## 폴더 안내
 
