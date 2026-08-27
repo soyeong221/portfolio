@@ -21,13 +21,13 @@
 | ⭐ Featured | [ROS2 Smart Gate](./projects/ros2-smart-gate/) | ROS2 · Arduino · Python | 센서 데이터 기반 위험 판단과 게이트 제어 |
 | ⭐ Featured | [ITS CCTV](./projects/its-cctv/) | C# · WPF · ASP.NET Core | Open API 기반 실시간 CCTV·지도 통합 모니터링 |
 | 🚧 In Progress | [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | Raspberry Pi · PyQt5 · MQTT · DB | 제품 분류, 생산량 관리 및 작업자 HMI |
-| - | [AI Knowledge Search System](./projects/ai-knowledge-system/) | C# · WPF · FastAPI · RAG · ChromaDB | PDF 벡터 검색 및 문서 기반 AI 질의응답 |
-| - | [SmartHome IoT](./projects/smarthome-iot/) | C# · WPF · MQTT · MySQL | Dummy 센싱 데이터 MQTT 송수신 및 DB 저장 |
-| - | [AI Fire Detection](./projects/ai-fire-detection/) | Python · YOLO · MQTT | 실시간 화재·연기 감지 및 MQTT 모니터링 |
-| - | [Smart IoT Controller](./projects/smart-iot-controller/) | Raspberry Pi · PyQt5 | 센서 모니터링 및 장치 제어 |
-| - | [PlanMate](./projects/planmate/) | C++ | 객체지향 기반 일정·할 일 관리 프로그램 |
-| - | [Busan Restaurant](./projects/busan-restaurant/) | Python | 부산 공공데이터 기반 맛집 조회·추천 |
-| - | [Cafe Kiosk](./projects/cafe-kiosk/) | C# | 메뉴 주문 및 결제 흐름 구현 |
+|  | [AI Knowledge Search System](./projects/ai-knowledge-system/) | C# · WPF · FastAPI · RAG · ChromaDB | PDF 벡터 검색 및 문서 기반 AI 질의응답 |
+|  | [SmartHome IoT](./projects/smarthome-iot/) | C# ·WPF · MQTT · MySQL | Dummy 센싱 데이터 MQTT 송수신 및 DB 저장 |
+|  | [AI Fire Detection](./projects/ai-fire-detection/) | Python · YOLO · MQTT | 실시간 화재·연기 감지 및 MQTT 모니터링 |
+|  | [Smart IoT Controller](./projects/smart-iot-controller/) | Raspberry Pi · PyQt5 | 센서 모니터링 및 장치 제어 |
+|  | [PlanMate](./projects/planmate/) | C++ | 객체지향 기반 일정·할 일 관리 프로그램 |
+|  | [Busan Restaurant](./projects/busan-restaurant/) | Python | 부산 공공데이터 기반 맛집 조회·추천 |
+|  | [Cafe Kiosk](./projects/cafe-kiosk/) | C# | 메뉴 주문 및 결제 흐름 구현 |
 
 ## Skills
 
