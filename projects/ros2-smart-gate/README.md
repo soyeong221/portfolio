@@ -17,7 +17,7 @@
 ## 모니터링 화면
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b3e87c35-14cd-48c5-840b-fd66d33ca493" width="600" alt="Smart Gate Monitoring System 모니터링 화면"/>
+  <img src="https://github.com/user-attachments/assets/a7b059dd-8dc3-40e4-af73-7feeddea95e5" width="600" alt="Smart Gate Monitoring System 모니터링 화면"/>
 </p>
 
 <br>
