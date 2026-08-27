@@ -5,11 +5,11 @@
 ## 시스템 구조
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9cce5030-4bbd-4cab-8995-ab3aed89795d" width="1000" alt="Smart Gate Monitoring System 시스템 구성 예시"/>
+  <img src="https://github.com/user-attachments/assets/a600b298-508e-4993-a59c-84b71b680056" width="1000" alt="Smart Gate Monitoring System 시스템 구성 예시"/>
 </p>
 
 <p align="center">
-  <sub>※ 시스템 구성을 이해하기 위한 예시 이미지입니다.</sub>
+  <sub>※ 실제 시스템 사진이 아닌, 시스템 구성과 동작 흐름을 설명하기 위한 예시 이미지입니다.</sub>
 </p>
 
 <br>
@@ -17,7 +17,7 @@
 ## 모니터링 화면
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1fb96466-2941-4504-a33a-5aaff134eacf" width="600" alt="Smart Gate Monitoring System PyQt5 모니터링 화면"/>
+  <img src="https://github.com/user-attachments/assets/4bdd9082-4695-4fa0-8edd-cdbfe8df7256" width="500" alt="Smart Gate Monitoring System PyQt5 모니터링 화면"/>
 </p>
 
 <p align="center">
