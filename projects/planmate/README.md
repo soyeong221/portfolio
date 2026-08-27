@@ -64,3 +64,5 @@ Date Selection
 Schedule / Todo CRUD
     ↓
 Auto Save
+
+> 이 포트폴리오 폴더는 프로젝트를 설명하기 위한 요약본입니다. 실제 소스코드와 상세 개발 과정은 원본 GitHub 저장소에서 관리합니다.
