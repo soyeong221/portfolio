@@ -34,37 +34,32 @@
 
 ## 프로젝트 개요
 
-Arduino에서 측정한 거리·온도·습도·조도 데이터를 Serial 통신으로
-ROS2 환경에 전달하고, 센서별 Topic으로 변환해 상태를 판단하는 시스템입니다.
+Arduino에서 측정한 거리·온도·습도·조도 데이터를 Serial 통신으로 ROS2 환경에 전달하고,
+센서별 Topic으로 변환하여 현재 시스템 상태를 판단하는 개인 프로젝트입니다.
 
 `controller_node`에서 복수 센서 데이터를 기반으로 위험 상태를 판단하고,
 결과를 `/led_cmd`, `/gate_cmd` Topic으로 발행하여
 Arduino의 RGB LED와 스테퍼 모터를 제어하도록 구성했습니다.
 
-`controller_node`에서 센서값과 시스템 상태, 현재 LED·게이트 제어 명령을
-콘솔 Dashboard에 주기적으로 출력하여 실시간으로 확인할 수 있도록 구현했습니다.
+센서값과 시스템 상태, 현재 제어 명령은 콘솔 Dashboard를 통해 실시간으로 확인할 수 있습니다.
 
 ## 프로젝트 정보
 
-| 항목                | 내용                                          |
-| ----------------- | ------------------------------------------- |
-| 개발 형태             | 개인 프로젝트                                     |
-| 개발 환경             | Ubuntu, ROS2 Jazzy, Arduino UNO             |
-| Language          | Python, Arduino C++                         |
+| 항목 | 내용 |
+|---|---|
+| 개발 형태 | 개인 프로젝트 |
+| 개발 환경 | Ubuntu, ROS2 Jazzy, Arduino UNO |
+| Language | Python, Arduino C++ |
 | Sensor / Actuator | HC-SR04, DHT11, CDS, RGB LED, Stepper Motor |
-| 통신                | Serial Communication, ROS2 Pub/Sub          |
+| 통신 | Serial Communication, ROS2 Pub/Sub |
 
 ## 주요 기능
 
-* Arduino에서 거리·온도·습도·조도 센서 데이터 수집
-* 센서 데이터를 `distance,temp,humidity,light` 형식의 CSV로 Serial 전송
-* `sensor_bridge`를 이용한 ROS2 센서 Topic 변환 및 발행
-* `/distance`, `/temperature`, `/humidity`, `/light_level` Topic 기반 상태 모니터링
-* `controller_node` 기반 복수 센서 위험 상태 판단
-* `/led_cmd`, `/gate_cmd` Topic을 통한 제어 명령 발행
-* RGB LED를 이용한 위험·주의·안전 상태 표시
-* 스테퍼 모터를 이용한 게이트 OPEN / CLOSE 제어
-* 콘솔 Dashboard를 통한 센서값·시스템 상태·제어 명령 실시간 모니터링
+- 거리·온도·습도·조도 센서 데이터 수집 및 Serial CSV 전송
+- `sensor_bridge`를 통한 센서별 ROS2 Topic 변환 및 발행
+- 복수 센서 데이터를 기반으로 한 위험 상태 판단
+- `/led_cmd`, `/gate_cmd` Topic 기반 RGB LED·게이트 제어
+- 콘솔 Dashboard를 통한 센서값·시스템 상태·제어 명령 실시간 모니터링
 
 ## 시스템 흐름
 
@@ -95,172 +90,178 @@ controller_node.py
 센서값을 기반으로 현재 시스템 상태를 판단하고,
 상태에 따라 LED와 게이트 제어 명령을 생성하도록 구성했습니다.
 
-| 조건             | 시스템 상태               | LED    | Gate  |
-| -------------- | -------------------- | ------ | ----- |
-| 기본 상태          | `NORMAL`             | GREEN  | CLOSE |
-| 습도 > 80%       | `HUMID WARNING`      | YELLOW | CLOSE |
-| 조도 < 300       | `NIGHT SECURITY`     | GREEN  | CLOSE |
-| 야간 + 거리 < 50cm | `NIGHT SECURITY`     | YELLOW | CLOSE |
-| 거리 < 30cm      | `NEAR APPROACH`      | YELLOW | CLOSE |
-| 거리 < 10cm      | `INTRUSION DETECTED` | RED    | OPEN  |
-| 온도 > 35°C      | `FIRE EMERGENCY`     | RED    | OPEN  |
+| 조건 | 시스템 상태 | LED | Gate |
+|---|---|---|---|
+| 기본 상태 | `NORMAL` | GREEN | CLOSE |
+| 습도 > 80% | `HUMID WARNING` | YELLOW | CLOSE |
+| 조도 < 300 | `NIGHT SECURITY` | GREEN | CLOSE |
+| 야간 + 거리 < 50cm | `NIGHT SECURITY` | YELLOW | CLOSE |
+| 거리 < 30cm | `NEAR APPROACH` | YELLOW | CLOSE |
+| 거리 < 10cm | `INTRUSION DETECTED` | RED | OPEN |
+| 온도 > 35°C | `FIRE EMERGENCY` | RED | OPEN |
 
 > 여러 조건이 동시에 충족되는 경우 코드의 판단 순서에 따라 후순위 조건이 최종 상태와 제어 명령에 반영됩니다.
 
 ### LED 상태
 
-| 상태 | 명령     | RED | GREEN | BLUE |
-| -- | ------ | --- | ----- | ---- |
-| 위험 | RED    | ON  | OFF   | OFF  |
-| 주의 | YELLOW | ON  | ON    | OFF  |
-| 안전 | GREEN  | OFF | ON    | OFF  |
+| 상태 | 명령 | RED | GREEN | BLUE |
+|---|---|---|---|---|
+| 위험 | RED | ON | OFF | OFF |
+| 주의 | YELLOW | ON | ON | OFF |
+| 안전 | GREEN | OFF | ON | OFF |
 
 > RGB LED는 ACTIVE LOW 방식으로 `LOW = ON`, `HIGH = OFF`로 동작하며,
 > YELLOW는 RED와 GREEN을 동시에 점등하여 구현했습니다.
 
 ### Gate 제어
 
-| 명령    | 동작                 |
-| ----- | ------------------ |
-| OPEN  | 게이트 열기 (+512 step) |
+| 명령 | 동작 |
+|---|---|
+| OPEN | 게이트 열기 (+512 step) |
 | CLOSE | 게이트 닫기 (-512 step) |
 
-## 주요 구성 요소
+## 핵심 구현 코드
 
-### Arduino
+### 1. Serial 센서 데이터를 ROS2 Topic으로 변환
 
-* HC-SR04 초음파 센서 거리 측정
-* DHT11 온도·습도 측정
-* CDS 조도 측정
-* 센서 데이터 Serial 전송
-* ROS2 제어 명령 수신
-* RGB LED 및 스테퍼 모터 제어
+Arduino에서 CSV 형식으로 전달된 거리·온도·습도·조도 데이터를 파싱하고,
+각 데이터를 독립적인 ROS2 Topic으로 발행했습니다.
 
-### sensor_bridge
+```python
+def read_serial(self):
+    if self.ser.in_waiting > 0:
+        line = self.ser.readline().decode(errors='ignore').strip()
 
-Arduino에서 전달받은 CSV 데이터를 파싱하여 ROS2 Topic으로 변환합니다.
+        try:
+            d, t, h, l = map(float, line.split(','))
 
-```text
-25.3,28.5,54.2,620
+            self.pub_dist.publish(Float32(data=d))
+            self.pub_temp.publish(Float32(data=t))
+            self.pub_humi.publish(Float32(data=h))
+            self.pub_light.publish(Float32(data=l))
+
+        except:
+            pass
 ```
 
-Publish Topic:
+**구현 포인트**
+- Serial CSV 데이터를 거리·온도·습도·조도로 분리
+- 센서별 독립적인 ROS2 Topic으로 Publish
+- Arduino와 ROS2 사이의 데이터 Bridge 구성
 
-```text
-/distance
-/temperature
-/humidity
-/light_level
+[전체 프로젝트 소스](https://github.com/soyeong221/iot-cpp-2026-mini-project/tree/main)
+
+### 2. 복수 센서 기반 상태 판단 및 제어
+
+센서 Topic으로 수신한 값을 조합하여 현재 상태를 판단하고,
+LED와 게이트 제어 명령을 결정했습니다.
+
+```python
+led, gate, status = "GREEN", "CLOSE", "NORMAL"
+
+if self.humi > 80:
+    status, led = "HUMID WARNING", "YELLOW"
+
+if self.light < 300:
+    status = "NIGHT SECURITY"
+    if self.dist < 50:
+        led = "YELLOW"
+
+if 0 < self.dist < 30:
+    status, led, gate = "NEAR APPROACH", "YELLOW", "CLOSE"
+
+if 0 < self.dist < 10:
+    status, led, gate = "INTRUSION DETECTED", "RED", "OPEN"
+
+if self.temp > 35:
+    status, led, gate = "FIRE EMERGENCY", "RED", "OPEN"
 ```
 
-또한 `/led_cmd`, `/gate_cmd`를 Subscribe하여
-ROS2 제어 명령을 다시 Arduino로 전달합니다.
+상태가 변경된 경우에만 새로운 제어 명령을 Publish합니다.
 
-### controller_node
+```python
+if led != self.last_led:
+    self.led_pub.publish(String(data=led))
+    self.last_led = led
 
-센서 Topic을 Subscribe하여 현재 시스템 상태를 판단하고
-LED 및 게이트 제어 명령을 생성합니다.
-
-Publish Topic:
-
-```text
-/led_cmd
-/gate_cmd
+if gate != self.last_gate:
+    self.gate_pub.publish(String(data=gate))
+    self.last_gate = gate
 ```
 
-주요 판단 상태:
+**구현 포인트**
+- 거리·온도·습도·조도를 조합한 상태 판단
+- 상태에 따른 LED·게이트 명령 생성
+- 이전 명령과 비교하여 변경된 경우에만 Publish
 
-```text
-NORMAL
-HUMID WARNING
-NIGHT SECURITY
-NEAR APPROACH
-INTRUSION DETECTED
-FIRE EMERGENCY
+[전체 프로젝트 소스](https://github.com/soyeong221/iot-cpp-2026-mini-project/tree/main)
+
+### 3. ROS2 명령을 실제 하드웨어 제어로 연결
+
+ROS2에서 생성된 제어 명령을 Serial로 Arduino에 전달하여
+RGB LED와 스테퍼 모터를 제어했습니다.
+
+```cpp
+if (Serial.available() > 0) {
+    String cmd = Serial.readStringUntil('\n');
+    cmd.trim();
+
+    if (cmd == "RED")    setLED(LOW, HIGH, HIGH);
+    if (cmd == "YELLOW") setLED(LOW, LOW, HIGH);
+    if (cmd == "GREEN")  setLED(HIGH, LOW, HIGH);
+
+    if (cmd == "OPEN")   myStepper.step(512);
+    if (cmd == "CLOSE")  myStepper.step(-512);
+}
 ```
 
-### Console Dashboard
+**구현 포인트**
+- ROS2 제어 명령을 Arduino에서 Serial로 수신
+- ACTIVE LOW 방식의 RGB LED 제어
+- `OPEN/CLOSE` 명령에 따른 스테퍼 모터 방향 제어
+- ROS2의 판단 결과를 실제 하드웨어 동작까지 연결
 
-`controller_node`에서는 센서 Topic으로 수신한 값과 현재 시스템 상태,
-LED 및 게이트 제어 명령을 콘솔 Dashboard에 주기적으로 출력하도록 구현했습니다.
-
-표시 항목:
-
-* System Status
-* Distance
-* Temperature
-* Humidity
-* Light Level
-* LED Color
-* Gate Status
-
-`draw_dashboard()`를 통해 0.5초 주기로 화면을 갱신하여
-센서 데이터와 현재 제어 상태를 실시간으로 확인할 수 있도록 구성했습니다.
-
-```text
-┌──────────────────────────────────────────┐
-│       SMART GATE MONITORING SYSTEM       │
-├──────────────────────────────────────────┤
-│ SYSTEM STATUS : NIGHT SECURITY           │
-├──────────────────────────────────────────┤
-│ [SENSOR DATA]                            │
-│ - Distance    :   52.0 cm                │
-│ - Temperature :   27.2 °C                │
-│ - Humidity    :   33.0 %                 │
-│ - Light Level :    160                   │
-├──────────────────────────────────────────┤
-│ [ACTIVE COMMANDS]                        │
-│ - LED Color   : GREEN                    │
-│ - Gate Status : CLOSE                    │
-└──────────────────────────────────────────┘
-```
+[전체 프로젝트 소스](https://github.com/soyeong221/iot-cpp-2026-mini-project/tree/main)
 
 ## 대표 트러블슈팅
 
 ### 1. Serial Parsing 오류
 
-**문제**
+**문제**  
 `ARDUINO READY`와 같은 디버그 문자열이 센서 CSV 데이터와 함께 전송되어
 `sensor_bridge`에서 파싱 오류가 발생했습니다.
 
-**해결**
-Arduino의 Serial 출력 형식을
-`distance,temp,humidity,light` 네 개의 센서값 CSV로 고정하여
+**해결**  
+Serial 출력 형식을 `distance,temp,humidity,light` 네 개의 센서값으로 고정하여
 센서 데이터만 전달하도록 수정했습니다.
 
 ### 2. RGB LED 색상 불일치
 
-**문제**
+**문제**  
 RGB LED의 ACTIVE LOW 특성과 실제 핀 매핑을 반대로 이해하여
 원하는 색상이 정상적으로 출력되지 않았습니다.
 
-**해결**
-RED(D13), GREEN(D11), BLUE(D12) 핀을 다시 확인하고
-`LOW = ON`, `HIGH = OFF` 기준으로 제어 로직을 수정했습니다.
-
-YELLOW는 RED와 GREEN을 동시에 점등하도록 구현했습니다.
+**해결**  
+실제 핀 매핑을 다시 확인하고 `LOW = ON`, `HIGH = OFF` 기준으로 제어 로직을 수정했으며,
+YELLOW는 RED와 GREEN을 동시에 점등하도록 구성했습니다.
 
 ### 3. ROS2-Arduino 명령 불일치
 
-**문제**
-ROS2에서 발행하는 명령 문자열과 Arduino에서 비교하는 문자열이 일치하지 않아
+**문제**  
+ROS2에서 발행하는 명령과 Arduino에서 비교하는 문자열이 일치하지 않아
 LED와 게이트가 정상적으로 동작하지 않았습니다.
 
-**해결**
-양쪽에서 사용하는 명령을
-`RED`, `YELLOW`, `GREEN`, `OPEN`, `CLOSE`로 통일하여
+**해결**  
+양쪽의 명령을 `RED`, `YELLOW`, `GREEN`, `OPEN`, `CLOSE`로 통일하여
 Serial 제어 명령의 일관성을 확보했습니다.
 
 ## 프로젝트 결과
 
-* ROS2와 Arduino 간 양방향 Serial 통신 구현
-* 센서 데이터를 네 개의 ROS2 Topic으로 분리하여 발행
-* 복수 센서 데이터를 기반으로 위험 상태 판단 로직 구현
-* RGB LED를 이용한 상태 시각화
-* 스테퍼 모터를 이용한 게이트 개폐 제어
-* 센서 데이터와 제어 명령의 형식을 표준화하여 통신 안정성 개선
-* 콘솔 Dashboard를 통한 센서값·시스템 상태·제어 명령 실시간 모니터링
-* Arduino 센서 수집 → ROS2 상태 판단 → 하드웨어 제어까지 이어지는 시스템 흐름 구현
-
+- ROS2와 Arduino 간 양방향 Serial 통신 구현
+- 센서 데이터를 ROS2 Topic으로 분리하여 실시간 처리
+- 복수 센서 기반 상태 판단 및 RGB LED·게이트 제어 구현
+- 센서 데이터와 제어 명령 형식을 표준화하여 통신 안정성 개선
+- 콘솔 Dashboard를 통한 센서값·시스템 상태·제어 명령 모니터링
+- **센서 수집 → ROS2 상태 판단 → 하드웨어 제어**로 이어지는 전체 시스템 흐름 구현
 
 > 이 포트폴리오 폴더는 프로젝트를 설명하기 위한 요약본입니다. 실제 소스코드와 상세 개발 과정은 원본 GitHub 저장소에서 관리합니다.
