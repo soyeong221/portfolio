@@ -23,6 +23,7 @@
 | 🚧 [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | Raspberry Pi · PyQt5 · MQTT · DB | 제품 분류, 생산량 관리 및 작업자 HMI |
 | [AI Knowledge Search System](./projects/ai-knowledge-system/) | C# · WPF · FastAPI · RAG · ChromaDB | PDF 벡터 검색 및 문서 기반 AI 질의응답 |
 | [SmartHome IoT](./projects/smarthome-iot/) | C# · WPF · MQTT · MySQL | Dummy 센싱 데이터 MQTT 송수신 및 DB 저장 |
+| [WinForms Book Management](https://github.com/soyeong221/iot-dotnet-2026/tree/main/winapp/IoT02WinSolution/DotNet06DbBooksApp) | C# · WinForms · MySQL | DataGridView 기반 도서 정보 CRUD 및 장르 데이터 연동 |
 | [AI Fire Detection](./projects/ai-fire-detection/) | Python · YOLO · MQTT | 실시간 화재·연기 감지 및 MQTT 모니터링 |
 | [Smart IoT Controller](./projects/smart-iot-controller/) | Raspberry Pi · PyQt5 | 센서 모니터링 및 장치 제어 |
 | [PlanMate](./projects/planmate/) | C++ | 객체지향 기반 일정·할 일 관리 프로그램 |
@@ -39,7 +40,7 @@
 | IoT / Embedded | Raspberry Pi, Arduino, ESP32-CAM, GPIO, Sensor Control |
 | Communication | MQTT, ROS2 Pub/Sub, Serial Communication, TCP/IP, REST API |
 | Vision / AI | OpenCV, YOLO, RAG, Sentence Transformers, Ollama, OpenAI |
-| Application | Qt, PyQt5, WPF (.NET), DevExpress, ASP.NET Core Web API, FastAPI |
+| Application | Qt, PyQt5, WPF (.NET), WinForms, DevExpress, ASP.NET Core Web API, FastAPI |
 | Web | HTML, CSS, JavaScript |
 | Database | MySQL, ChromaDB, ERD, CRUD |
 | Environment | Windows, Ubuntu Linux, Raspberry Pi OS, Git, GitHub, Visual Studio, VS Code, PlatformIO, Docker, DBeaver, Postman |
