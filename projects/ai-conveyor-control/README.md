@@ -73,7 +73,7 @@ Unity 모니터링 화면의 MQTT 제어 메시지를 Raspberry Pi에서 수신�
 | 항목 | 내용 |
 |---|---|
 | 개발 형태 | 교육 실습 프로젝트 |
-| 핵심 기술 | Python, C/C++, YOLO, OpenCV, Raspberry Pi, ESP32-CAM, Arduino |
+| 핵심 기술 | Python, C++, YOLO, OpenCV, Raspberry Pi, ESP32-CAM, Arduino |
 | 통신 | MQTT, Serial, Wi-Fi |
 | 핵심 기능 | 실시간 객체인식, 제품 분류, MQTT 데이터 전송, 컨베이어 원격 제어 |
 
