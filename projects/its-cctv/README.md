@@ -5,7 +5,7 @@
 ## 실행 화면
 
 <p align="center">
-  <img width="1237" height="692" alt="ITS CCTV Monitoring System 실행 화면" src="https://github.com/user-attachments/assets/7abce5ea-9555-40fe-9ab4-8c861c2b8feb" />
+  <img width="1198" height="550" alt="ITS CCTV Monitoring System 실행 화면" src="https://github.com/user-attachments/assets/a78b6f68-c1ea-4d48-a99e-a39d28d35bb4" />
 </p>
 
 <br>
