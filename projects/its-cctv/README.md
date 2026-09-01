@@ -1,51 +1,14 @@
 # ITS CCTV Monitoring System
 
-> C# WPF와 ASP.NET Core Web API를 활용한 실시간 CCTV 조회·모니터링 시스템
+> ITS OpenAPI 기반 실시간 CCTV 영상·지도 통합 모니터링 시스템
 
-## 시스템 구현
+## 실행 화면
 
-<p align="center">
-  <img src="./images/cctv-system.png" width="900" alt="ITS CCTV 모니터링 시스템"/>
-</p>
+## 실행 영상
 
-국가교통정보센터 ITS Open API의 CCTV 데이터를 ASP.NET Core Web API를 통해 조회하고,
-WPF Client에서 CCTV 정보·위치·실시간 영상을 하나의 화면에서 확인할 수 있도록 구현했습니다.
+cctv.mp4
 
-<br>
-
-## 동작 결과
-
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <img src="./images/cctv-list.png" width="100%" alt="CCTV 조회 결과"/>
-      <br>
-      <b>CCTV 조회</b>
-      <br>
-      지역 및 조건에 따른 CCTV 정보 조회
-    </td>
-    <td align="center" width="33%">
-      <img src="./images/cctv-stream.png" width="100%" alt="CCTV 영상 재생"/>
-      <br>
-      <b>실시간 영상</b>
-      <br>
-      LibVLCSharp 기반 HLS CCTV 스트림 재생
-    </td>
-    <td align="center" width="33%">
-      <img src="./images/cctv-map.png" width="100%" alt="CCTV 지도 연동"/>
-      <br>
-      <b>지도 연동</b>
-      <br>
-      CCTV 위치 및 상세정보 표시
-    </td>
-  </tr>
-</table>
-
-<br>
-
-## 🔗 **Original Project**
-
-> WPF Client와 ASP.NET Core Web API 연동부터 ITS Open API 데이터 조회, CCTV 영상 재생 및 지도 연동까지의 전체 구현 과정을 확인할 수 있습니다.
+## 🔗 Original Project
 
 [View on GitHub](https://github.com/soyeong221/iot-dotnet-2026/blob/main/TOYPROJECT1.md)
 
@@ -53,35 +16,35 @@ WPF Client에서 CCTV 정보·위치·실시간 영상을 하나의 화면에서
 
 ## 프로젝트 개요
 
-국가교통정보센터 ITS Open API에서 CCTV 정보를 조회하고,
-실시간 영상과 위치 정보를 하나의 WPF 응용프로그램에서 확인할 수 있도록 구현한 프로젝트입니다.
+국가교통정보센터 ITS Open API를 활용하여 전국 고속도로·국도 CCTV를 검색하고, 실시간 영상과 위치 정보를 함께 확인할 수 있도록 구현한 WPF 기반 데스크톱 애플리케이션입니다.
 
-WPF Client가 외부 Open API를 직접 호출하지 않고 ASP.NET Core Web API를 Bridge Server로 구성하여
-외부 API 요청과 데이터 처리를 담당하도록 분리했습니다.
+WPF 클라이언트가 외부 Open API를 직접 호출하지 않고, ASP.NET Core Web API로 구현한 Bridge Server를 통해 데이터를 전달받도록 구성했습니다.
 
-이를 통해 API 인증키를 Client에서 분리하고,
-외부 데이터 조회와 사용자 화면 표시 기능의 역할을 구분했습니다.
+이를 통해 API 인증키를 클라이언트에서 분리하고, 외부 API 요청과 화면 표시 기능의 역할을 구분했습니다.
 
 ## 프로젝트 정보
 
 | 항목 | 내용 |
 |---|---|
-| 개발 형태 | 개인 토이 프로젝트 |
-| 핵심 기술 | C#, WPF, ASP.NET Core Web API, LibVLCSharp, WebView2, Leaflet.js |
-| 데이터 | 국가교통정보센터 ITS Open API |
-| 핵심 기능 | CCTV 조회, HLS 영상 재생, 지도 연동, 상세정보 표시 |
+| 프로젝트 유형 | 개인 토이 프로젝트 |
+| Client | C#, WPF, Wpf.Ui, WebView2, LibVLCSharp |
+| Server | ASP.NET Core Web API |
+| Map | Leaflet.js |
+| Data | 국가교통정보센터 ITS Open API |
+| 주요 기능 | CCTV 검색, 실시간 영상 재생, 지도 표시, 상세정보 조회 |
 
 ## 주요 기능
 
-- C# WPF 기반 CCTV 조회·모니터링 응용프로그램 구현
-- ASP.NET Core Web API 기반 Bridge Server 구성
-- 국가교통정보센터 ITS Open API CCTV 데이터 조회
-- API 인증키를 Client에서 분리하여 Server에서 관리
-- CCTV 데이터 JSON 직렬화·역직렬화
-- LibVLCSharp 기반 HLS CCTV 스트림 재생
-- WebView2를 활용한 웹 콘텐츠 연동
-- Leaflet.js 기반 CCTV 위치 지도 표시
-- CCTV 선택 시 영상·지도·상세정보 연동
+- 전국 시·도 단위의 위도·경도 범위를 이용한 CCTV 검색
+- 고속도로와 국도 CCTV 구분 조회
+- 검색 중 ProgressBar를 이용한 진행 상태 표시
+- 초기화 버튼을 통한 검색 조건, 목록, 영상 및 지도 초기화
+- LibVLCSharp을 활용한 HLS 실시간 영상 재생
+- WebView2와 Leaflet.js를 활용한 CCTV 위치 지도 표시
+- 선택한 CCTV의 이름, 좌표, 영상 URL 등 상세정보 제공
+- WPF 클라이언트와 ASP.NET Core Web API 연동
+- 스트리밍 연결 성공·실패 상태 표시
+- 영상 재생 실패 및 API 키 누락 등에 대한 예외 처리
 
 ## 시스템 흐름
 
@@ -102,137 +65,173 @@ ASP.NET Core Web API에서 외부 ITS Open API를 호출하여 CCTV 데이터를
 
 ## 핵심 구현 코드
 
-### 1. WPF Client에서 Bridge API 호출
+### 1. WPF Client → Bridge API 연동
 
-WPF Client에서 검색 조건을 JSON으로 변환하여 ASP.NET Core Web API에 전달하고,
-응답받은 CCTV 데이터를 다시 객체로 변환하여 화면에서 사용할 수 있도록 구성했습니다.
+WPF 클라이언트에서 검색 조건을 Bridge API로 전달하고, 응답받은 JSON 데이터를 CCTV 목록으로 변환하도록 구성했습니다.
 
 ```csharp
-var json = JsonSerializer.Serialize(searchCondition);
-var content = new StringContent(
-    json,
-    Encoding.UTF8,
-    "application/json"
-);
-
-var response = await client.PostAsync(apiUrl, content);
-
-if (response.IsSuccessStatusCode)
+public async Task<List<CctvResultDto>> GetBridgeApiAsync(CctvRequest request)
 {
-    var result = await response.Content.ReadAsStringAsync();
+    var req = new HttpRequestMessage(HttpMethod.Get, AppCommon.baseUrl);
 
-    var cctvList =
-        JsonSerializer.Deserialize<List<CctvInfo>>(result);
+    req.Content = new StringContent(
+        JsonConvert.SerializeObject(request),
+        Encoding.UTF8,
+        "application/json");
 
-    return cctvList;
+    var response = await httpClient.SendAsync(req);
+    string json = await response.Content.ReadAsStringAsync();
+
+    var result = JsonConvert.DeserializeObject<List<CctvResultDto>>(json);
+
+    if (result == null) return new();
+    else return result;
 }
 ```
 
 **구현 포인트**
-- WPF Client에서 검색 조건을 JSON으로 직렬화
-- `HttpClient`를 이용하여 Bridge API 호출
-- Server 응답 데이터를 역직렬화하여 CCTV 객체로 변환
-- Client가 외부 ITS API를 직접 호출하지 않는 구조로 분리
 
-### 2. ASP.NET Core Web API에서 ITS Open API 호출
+- WPF Client와 외부 ITS API 호출 역할 분리
+- 검색 조건을 JSON으로 직렬화하여 Bridge API에 전달
+- 응답 JSON을 `CctvResultDto` 목록으로 역직렬화
+- 클라이언트에서는 화면 처리에 필요한 데이터만 사용
 
-Bridge Server에서 Client의 요청을 받아 ITS Open API를 호출하고,
-응답 데이터를 Client에서 사용할 수 있는 형태로 변환하여 반환했습니다.
+### 2. Bridge Server → ITS Open API 호출
+
+Bridge Server에서 설정 파일의 API 인증키를 읽고, 검색 조건을 ITS Open API 요청 파라미터로 구성했습니다.  
+응답 데이터는 화면에서 사용할 필드만 `CctvResultDto`로 변환하여 WPF 클라이언트에 전달하도록 구성했습니다.
 
 ```csharp
-var apiKey = configuration["ItsApi:ApiKey"];
+public async Task<List<CctvResultDto>> GetCctvSearchAsync(CctvRequest request)
+{
+    var apiKey = configuration["ItsOpenApi:ApiKey"];
 
-var url =
-    $"{baseUrl}?apiKey={apiKey}" +
-    $"&type={request.Type}" +
-    $"&cctvType={request.CctvType}";
+    var url = $"?apiKey={apiKey}" +
+              $"&type={request.RoadType}" +
+              $"&cctvType={request.CctvType}" +
+              $"&minX={request.MinX}" +
+              $"&maxX={request.MaxX}" +
+              $"&minY={request.MinY}" +
+              $"&maxY={request.MaxY}" +
+              $"&getType={request.GetRetType}";
 
-var response = await httpClient.GetAsync(url);
-response.EnsureSuccessStatusCode();
+    string json = await httpClient.GetStringAsync(url);
 
-var json =
-    await response.Content.ReadAsStringAsync();
+    var result = JsonConvert.DeserializeObject<CctvResponse>(json);
 
-var result =
-    JsonSerializer.Deserialize<ItsCctvResponse>(json);
+    if (result == null)
+        return new();
+
+    return result.Response.Data.Select(x => new CctvResultDto
+    {
+        CctvName = x.CctvName,
+        CoordX = Convert.ToDouble(x.CoordX),
+        CoordY = Convert.ToDouble(x.CoordY),
+        CctvType = Convert.ToInt32(x.CctvType),
+        CctvFormat = x.CctvFormat,
+        CctvUrl = x.CctvUrl,
+    }).ToList();
+}
 ```
 
 **구현 포인트**
-- API Key를 Server 설정에서 관리
-- Client에서 받은 검색 조건을 ITS API 요청에 반영
-- `HttpClient`를 활용한 외부 Open API 호출
-- 외부 API 응답을 역직렬화하여 Client에 전달
+
+- API 인증키를 WPF Client가 아닌 Server 설정에서 관리
+- 검색 조건을 외부 API 요청 파라미터로 변환
+- ITS Open API 응답 JSON 역직렬화
+- 필요한 데이터만 DTO로 변환하여 Client에 전달
 
 ### 3. CCTV 선택 시 영상·지도·상세정보 연동
 
-사용자가 CCTV 목록에서 항목을 선택하면
-해당 CCTV의 실시간 영상과 지도 위치, 상세정보가 함께 갱신되도록 구성했습니다.
+목록에서 CCTV를 선택하면 동일한 CCTV 정보를 기준으로 실시간 영상, 지도 위치, 상세정보를 함께 갱신하도록 구성했습니다.
 
 ```csharp
-private void GrdCctv_SelectionChanged(
+private async void LsbCctv_SelectionChanged(
     object sender,
     SelectionChangedEventArgs e)
 {
-    if (GrdCctv.SelectedItem is CctvInfo selected)
+    if (LsbCctv.SelectedItem is not CctvResultDto selected)
+        return;
+
+    PlayCctv(selected.CctvUrl);
+    await ShowMarkerAsync(selected);
+
+    SetDetailInfo(selected);
+    DisplayStatusBarInfo(selected);
+}
+```
+
+실시간 CCTV 영상은 LibVLCSharp을 이용하여 HLS URL을 재생합니다.
+
+```csharp
+private async Task PlayCctv(string url)
+{
+    if (string.IsNullOrWhiteSpace(url))
+        return;
+
+    try
     {
-        PlayCctv(selected.CctvUrl);
+        mediaPlayer.Stop();
 
-        ShowMarker(
-            selected.CoordY,
-            selected.CoordX,
-            selected.CctvName
-        );
-
-        SetDetailInfo(selected);
+        using var media = new Media(libVLC, new Uri(url));
+        mediaPlayer.Play(media);
+    }
+    catch (Exception ex)
+    {
+        await ShowMessageAsync(
+            "오류",
+            $"스트리밍 재생 오류 발생 : {ex.Message}");
     }
 }
 ```
 
+지도는 WebView2에서 Leaflet JavaScript 함수를 실행하여 선택한 CCTV 좌표로 마커를 이동합니다.
+
+```csharp
+string script = $"moveMarker({lat}, {lng}, '{name}');";
+await WvwMap.ExecuteScriptAsync(script);
+```
+
 **구현 포인트**
-- CCTV 선택 이벤트를 기준으로 관련 기능 연동
-- LibVLCSharp을 이용한 HLS 영상 재생
-- WebView2·Leaflet.js를 이용한 CCTV 위치 표시
-- 선택한 CCTV의 영상·지도·상세정보를 하나의 화면에서 제공
+
+- CCTV 선택 이벤트를 기준으로 영상·지도·상세정보 동기화
+- LibVLCSharp을 이용한 HLS 실시간 영상 재생
+- WebView2에서 Leaflet JavaScript 함수 실행
+- 하나의 CCTV 데이터를 여러 UI 영역에 연동
 
 ## 대표 트러블슈팅
 
-### 1. API 인증키의 Client 노출
+### 1. API 인증키 클라이언트 노출
 
 **문제**  
-초기 구조에서는 WPF Client에서 ITS Open API를 직접 호출하여
-API 인증키가 Client 코드에 포함되는 문제가 있었습니다.
+초기에는 WPF 클라이언트에서 ITS Open API를 직접 호출하여 API 인증키가 클라이언트 코드에 포함되는 구조였습니다.
 
 **해결**  
-ASP.NET Core Web API를 Bridge Server로 추가하고,
-API 인증키와 외부 API 호출을 Server에서 관리하도록 구조를 변경했습니다.
+ASP.NET Core Web API를 Bridge Server로 추가하고, API 인증키와 외부 API 호출 로직을 서버로 분리했습니다.
 
-### 2. Client와 Server 간 데이터 모델 불일치
+### 2. Client / Server 데이터 모델 불일치
 
 **문제**  
-WPF Client와 ASP.NET Core Server에서 사용하는 데이터 모델의
-속성명과 구조가 일치하지 않아 JSON 역직렬화 과정에서 데이터가 정상적으로 전달되지 않는 문제가 발생했습니다.
+Bridge API의 응답 구조와 WPF 클라이언트에서 사용하는 모델이 일치하지 않아 역직렬화 및 화면 표시 과정에서 데이터 처리 문제가 발생했습니다.
 
 **해결**  
-Client와 Server의 DTO 구조 및 JSON 속성을 비교하여 데이터 형식을 일치시키고,
-요청·응답 데이터가 정상적으로 변환되도록 수정했습니다.
+`CctvResultDto`를 기준으로 필요한 필드와 데이터 타입을 맞추어 Client와 Server 간 데이터 구조를 통일했습니다.
 
-### 3. Client와 Server 간 포트 불일치
+### 3. Client / Server 포트 불일치
 
 **문제**  
-ASP.NET Core 서버의 실행 프로필에 따라 포트가 달라지면서
-WPF Client에서 Bridge API 호출 시 연결이 거부되는 문제가 발생했습니다.
+ASP.NET Core 서버의 실행 프로필에 따라 포트가 달라지면서 WPF 클라이언트에서 Bridge API 호출 시 연결이 거부되는 문제가 발생했습니다.
 
 **해결**  
-ASP.NET Core 실행 로그의 `Now listening on` 주소와
-WPF Client에 설정된 Bridge API 주소를 비교하여 포트를 일치시키고 통신을 정상화했습니다.
+ASP.NET Core 실행 로그의 `Now listening on` 주소와 WPF 클라이언트에 설정된 Bridge API 주소를 비교하여 포트를 일치시키고 통신을 정상화했습니다.
 
 ## 프로젝트 결과
 
-- C# WPF 기반 CCTV 조회·모니터링 응용프로그램 구현
-- WPF Client와 ASP.NET Core Web API 간 데이터 연동
-- Bridge Server를 통한 ITS Open API 데이터 조회 구조 구현
-- LibVLCSharp을 활용한 HLS CCTV 실시간 영상 재생
-- WebView2·Leaflet.js 기반 CCTV 위치 지도 연동
-- 데이터 조회, 영상 재생, 지도 및 상세정보 표시 기능을 하나의 WPF 응용프로그램으로 통합
+- ITS Open API 기반 전국 CCTV 검색 기능 구현
+- ASP.NET Core Web API를 통한 외부 API 요청 및 인증키 분리
+- LibVLCSharp 기반 HLS 실시간 CCTV 영상 재생
+- WebView2 + Leaflet.js 기반 CCTV 위치 지도 연동
+- CCTV 선택 시 영상·지도·상세정보 동기화
+- WPF Client → Bridge API → ITS Open API로 역할을 분리한 시스템 구조 구현
 
 > 이 포트폴리오 폴더는 프로젝트를 설명하기 위한 요약본입니다. 실제 소스코드와 상세 개발 과정은 원본 GitHub 저장소에서 관리합니다.
