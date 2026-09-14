@@ -20,7 +20,7 @@
 | ⭐ [AI Conveyor Process Control](./projects/ai-conveyor-control/) | Python · YOLO · Raspberry Pi · Arduino · MQTT | AI 객체 인식 기반 제품 분류 및 컨베이어 제어 |
 | ⭐ [ITS CCTV](./projects/its-cctv/) | C# · WPF · ASP.NET Core | Open API 기반 실시간 CCTV·지도 통합 모니터링 |
 | ⭐ [ROS2 Smart Gate](./projects/ros2-smart-gate/) | ROS2 · Arduino · Python | 센서 데이터 기반 위험 판단과 게이트 제어 |
-| 🚧 [Smart Factory Packaging Alert](./projects/smart-factory-packaging/) | Raspberry Pi · PyQt5 · MQTT · MySQL | 제품 분류, 생산량 관리 및 작업자 HMI |
+| ⭐ [Smart Factory Production HMI](./projects/smart-factory-packaging/) | Python · PyQt5 · Raspberry Pi · MQTT · REST API | 생산 세션·실시간 생산현황·라인 제어를 연동한 작업자 HMI |
 | [AI Knowledge Search System](./projects/ai-knowledge-system/) | C# · WPF · FastAPI · RAG · ChromaDB | PDF 벡터 검색 및 문서 기반 AI 질의응답 |
 | [SmartHome IoT](./projects/smarthome-iot/) | C# · WPF · MQTT · MySQL | Dummy 센싱 데이터 MQTT 송수신 및 DB 저장 |
 | [WinForms Book Management](https://github.com/soyeong221/iot-dotnet-2026/tree/main/winapp/IoT02WinSolution/DotNet06DbBooksApp) | C# · WinForms · MySQL | DataGridView 기반 도서 정보 CRUD 및 장르 데이터 연동 |
