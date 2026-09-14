@@ -46,7 +46,11 @@ Raspberry Pi와 Arduino 기반 제어부에서 컨베이어와 설비를 제어�
   </tr>
 </table>
 
-<!-- 전체 시스템 시연 영상 링크 확보 후 이 위치에 `## 실행 영상` 섹션 추가 -->
+## 실행 영상
+
+https://github.com/user-attachments/assets/e8ad2c02-5c17-47c5-b9f5-fc02b2da909f
+
+> 제품 감지·분류, 컨베이어 동작 및 작업자 HMI 연동을 확인한 전체 시스템 시연
 
 ---
 
